@@ -12,6 +12,7 @@ import org.coffeelake.naturecode.worldgen.tree.BirchCurve;
 import org.coffeelake.naturecode.worldgen.tree.BirchOldGrowth;
 
 public class ModConfiguredFeatures {
+    public static final ResourceKey<ConfiguredFeature<?, ?>> CURVE_BIRCH_SMALL = registerKey("curve_birch_small");
     public static final ResourceKey<ConfiguredFeature<?, ?>> CURVE_BIRCH = registerKey("curve_birch");
     public static final ResourceKey<ConfiguredFeature<?, ?>> CURVE_BIRCH_RARE = registerKey("curve_birch_rare");
     public static final ResourceKey<ConfiguredFeature<?, ?>> CURVE_DEAD_BIRCH = registerKey("curve_dead_birch"); // dead tree
@@ -34,15 +35,15 @@ public class ModConfiguredFeatures {
         register(ctx,
                 CURVE_BIRCH,
                 Feature.TREE,
-                BirchCurve.BuildWith()); // 6, 3, 4
+                BirchCurve.Build()); // 6, 3, 4
         register(ctx,
                 CURVE_BIRCH_RARE,
                 Feature.TREE,
-                BirchCurve.BuildWith()); // 5, 3, 4
+                BirchCurve.Build()); // 5, 3, 4
         register(ctx,
                 CURVE_DEAD_BIRCH,
                 Feature.TREE,
-                BirchCurve.BuildDeadWith()); // 10, 3, 5
+                BirchCurve.BuildDead()); // 10, 3, 5
         register(ctx,
                 OLD_GROWTH_BIRCH,
                 Feature.TREE,

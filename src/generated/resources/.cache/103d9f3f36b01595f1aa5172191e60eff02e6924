@@ -1,9 +1,9 @@
-// 1.21.1	2025-08-21T00:52:57.042052	Registries
+// 1.21.1	2025-08-21T01:07:30.9393408	Registries
 56d1da9ab826fa431ec740b20c587347d4384ab9 data/naturecode/neoforge/biome_modifier/add_curve_birch.json
 86a541ebe30e9a9ac723be8f898a36d7d04e0721 data/naturecode/neoforge/biome_modifier/add_curve_birch_rare.json
-7de3ca0e95430873c33ff0aadfbbbb9860a7e6fd data/naturecode/neoforge/biome_modifier/add_curve_dead_birch.json
+61d8dc8bbf9c05a282eb9ea6b5f87ef5894017a8 data/naturecode/neoforge/biome_modifier/add_curve_dead_birch.json
 01a610dbd524202724a8a4c46ae7842f1abc750f data/naturecode/neoforge/biome_modifier/add_old_growth_birch.json
-eac4ca5ca7bc9a3c2ff653efd011ed7a019be2f5 data/naturecode/neoforge/biome_modifier/add_old_growth_dead_birch.json
+0bb154e7278699aafdcc3a723611984274e423b2 data/naturecode/neoforge/biome_modifier/add_old_growth_dead_birch.json
 d310a8c569decc3fd34f7c833404f10eb889af82 data/naturecode/worldgen/configured_feature/curve_birch.json
 d310a8c569decc3fd34f7c833404f10eb889af82 data/naturecode/worldgen/configured_feature/curve_birch_rare.json
 f6cc2df9906e69370bc4ea173dd1e7b50ba0214d data/naturecode/worldgen/configured_feature/curve_dead_birch.json

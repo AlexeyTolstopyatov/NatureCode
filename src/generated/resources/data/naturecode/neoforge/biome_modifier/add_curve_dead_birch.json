@@ -4,7 +4,8 @@
     "minecraft:forest",
     "minecraft:flower_forest",
     "minecraft:dark_forest",
-    "minecraft:birch_forest"
+    "minecraft:birch_forest",
+    "minecraft:swamp"
   ],
   "features": "naturecode:curve_dead_birch",
   "step": "vegetal_decoration"

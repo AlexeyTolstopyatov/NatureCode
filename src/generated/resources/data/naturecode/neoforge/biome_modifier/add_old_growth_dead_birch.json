@@ -2,7 +2,8 @@
   "type": "neoforge:add_features",
   "biomes": [
     "minecraft:old_growth_birch_forest",
-    "minecraft:old_growth_pine_taiga"
+    "minecraft:old_growth_pine_taiga",
+    "minecraft:swamp"
   ],
   "features": "naturecode:old_growth_dead_birch",
   "step": "vegetal_decoration"

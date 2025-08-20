@@ -1,6 +1,7 @@
 package org.coffeelake.naturecode.worldgen;
 
 import net.minecraft.core.Holder;
+import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
@@ -17,6 +18,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 
 public class ModPlacedFeatures {
+    public static final ResourceKey<PlacedFeature> CURVE_BIRCH_SMALL = registerKey("curve_birch_small");
     public static final ResourceKey<PlacedFeature> CURVE_BIRCH = registerKey("curve_birch_placed");
     public static final ResourceKey<PlacedFeature> CURVE_BIRCH_RARE = registerKey("curve_birch_rare");
     public static final ResourceKey<PlacedFeature> CURVE_DEAD_BIRCH = registerKey("curve_dead_birch"); // dead tree
@@ -37,22 +39,31 @@ public class ModPlacedFeatures {
      * @param ctx BootStrap context and NeoForge registries bound with ready-to-Place structures
      */
     public static void bootstrap(BootstrapContext<PlacedFeature> ctx) {
-        var configuredFeatures = ctx.lookup(Registries.CONFIGURED_FEATURE);
+        var cfg = ctx.lookup(Registries.CONFIGURED_FEATURE);
+        registerBirchKinds(ctx, cfg);
 
-        // warning! those strings is a limit of trees growing
-        register(ctx, CURVE_BIRCH, configuredFeatures.getOrThrow(ModConfiguredFeatures.CURVE_BIRCH),
+    }
+
+    /**
+     * Calls by bootstrapping system.
+     * Must make a records for each placed structures in the world registry.
+     * @param ctx BootStrapping Context for PlacedFeature
+     * @param cfg World's registries. (holder of registry records)
+     */
+    private static void registerBirchKinds(BootstrapContext<PlacedFeature> ctx, HolderGetter<ConfiguredFeature<?, ?>> cfg) {
+        register(ctx, CURVE_BIRCH, cfg.getOrThrow(ModConfiguredFeatures.CURVE_BIRCH),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2),
                         Blocks.BIRCH_SAPLING));
-        register(ctx, CURVE_BIRCH_RARE, configuredFeatures.getOrThrow(ModConfiguredFeatures.CURVE_BIRCH),
+        register(ctx, CURVE_BIRCH_RARE, cfg.getOrThrow(ModConfiguredFeatures.CURVE_BIRCH),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(2, 0.25f, 2),
                         Blocks.BIRCH_SAPLING));
-        register(ctx, CURVE_DEAD_BIRCH, configuredFeatures.getOrThrow(ModConfiguredFeatures.CURVE_DEAD_BIRCH),
+        register(ctx, CURVE_DEAD_BIRCH, cfg.getOrThrow(ModConfiguredFeatures.CURVE_DEAD_BIRCH),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(2, 0.01f, 2),
                         Blocks.BIRCH_SAPLING));
-        register(ctx, OLD_GROWTH_BIRCH, configuredFeatures.getOrThrow(ModConfiguredFeatures.OLD_GROWTH_BIRCH),
+        register(ctx, OLD_GROWTH_BIRCH, cfg.getOrThrow(ModConfiguredFeatures.OLD_GROWTH_BIRCH),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(2, 0.04f, 2),
                         Blocks.BIRCH_SAPLING));
-        register(ctx, OLD_GROWTH_DEAD_BIRCH, configuredFeatures.getOrThrow(ModConfiguredFeatures.OLD_GROWTH_DEAD_BIRCH),
+        register(ctx, OLD_GROWTH_DEAD_BIRCH, cfg.getOrThrow(ModConfiguredFeatures.OLD_GROWTH_DEAD_BIRCH),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(2, 0.02f, 2),
                         Blocks.BIRCH_SAPLING));
 
