@@ -1,5 +1,5 @@
 {
-  "feature": "naturecode:old_birch",
+  "feature": "naturecode:curve_dead_birch",
   "placement": [
     {
       "type": "minecraft:count",
@@ -8,7 +8,7 @@
         "distribution": [
           {
             "data": 2,
-            "weight": 9
+            "weight": 99
           },
           {
             "data": 4,

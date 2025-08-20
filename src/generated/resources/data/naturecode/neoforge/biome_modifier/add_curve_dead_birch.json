@@ -6,6 +6,6 @@
     "minecraft:dark_forest",
     "minecraft:birch_forest"
   ],
-  "features": "naturecode:old_birch",
+  "features": "naturecode:curve_dead_birch",
   "step": "vegetal_decoration"
 }

@@ -19,8 +19,10 @@ import java.util.List;
 public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> CURVE_BIRCH = registerKey("curve_birch_placed");
     public static final ResourceKey<PlacedFeature> CURVE_BIRCH_RARE = registerKey("curve_birch_rare");
-    public static final ResourceKey<PlacedFeature> OLD_BIRCH = registerKey("old_birch"); // dead tree
-    // public static final ResourceKey<PlacedFeature> OLD_GROWTH_BIRCH = registerKey("old_growth_birch"); // relic
+    public static final ResourceKey<PlacedFeature> CURVE_DEAD_BIRCH = registerKey("curve_dead_birch"); // dead tree
+    public static final ResourceKey<PlacedFeature> OLD_GROWTH_BIRCH = registerKey("old_growth_birch"); // relic
+    public static final ResourceKey<PlacedFeature> OLD_GROWTH_DEAD_BIRCH = registerKey("old_growth_dead_birch");
+
     private static ResourceKey<PlacedFeature> registerKey(@NotNull String name) {
         return ResourceKey.create(Registries.PLACED_FEATURE, ResourceLocation.fromNamespaceAndPath(NatureCode.MODID, name));
     }
@@ -41,13 +43,17 @@ public class ModPlacedFeatures {
         register(ctx, CURVE_BIRCH, configuredFeatures.getOrThrow(ModConfiguredFeatures.CURVE_BIRCH),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2),
                         Blocks.BIRCH_SAPLING));
-
         register(ctx, CURVE_BIRCH_RARE, configuredFeatures.getOrThrow(ModConfiguredFeatures.CURVE_BIRCH),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(2, 0.25f, 2),
                         Blocks.BIRCH_SAPLING));
-
-        register(ctx, OLD_BIRCH, configuredFeatures.getOrThrow(ModConfiguredFeatures.OLD_BIRCH),
-                VegetationPlacements.treePlacement(PlacementUtils.countExtra(2, 0.1f, 2),
+        register(ctx, CURVE_DEAD_BIRCH, configuredFeatures.getOrThrow(ModConfiguredFeatures.CURVE_DEAD_BIRCH),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(2, 0.01f, 2),
+                        Blocks.BIRCH_SAPLING));
+        register(ctx, OLD_GROWTH_BIRCH, configuredFeatures.getOrThrow(ModConfiguredFeatures.OLD_GROWTH_BIRCH),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(2, 0.04f, 2),
+                        Blocks.BIRCH_SAPLING));
+        register(ctx, OLD_GROWTH_DEAD_BIRCH, configuredFeatures.getOrThrow(ModConfiguredFeatures.OLD_GROWTH_DEAD_BIRCH),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(2, 0.02f, 2),
                         Blocks.BIRCH_SAPLING));
 
     }

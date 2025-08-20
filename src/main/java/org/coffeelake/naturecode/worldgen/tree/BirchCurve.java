@@ -19,15 +19,12 @@ public class BirchCurve {
 
     /**
      * Configures feature based on main tree parameters
-     * @param height main height
-     * @param heightFirstBranch height for a 1st branch
-     * @param heightSecondBranch height for a 2nd branch
      * @return configured curve birch
      */
-    public static TreeConfiguration BuildWith(int height, int heightFirstBranch, int heightSecondBranch) {
+    public static TreeConfiguration BuildWith() {
         return new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(Blocks.BIRCH_LOG),
-                new ForkingTrunkPlacer(height, heightFirstBranch, heightSecondBranch),
+                new ForkingTrunkPlacer(6, 3, 4),
                 BlockStateProvider.simple(Blocks.BIRCH_LEAVES),
                 new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(3), 3),
                 new TwoLayersFeatureSize(1, 0, 2)
@@ -36,15 +33,12 @@ public class BirchCurve {
 
     /**
      * Configures dead feature (without leaves) based on main tree parameters
-     * @param height main height
-     * @param heightFirstBranch height for a 1st branch
-     * @param heightSecondBranch height for a 2nd branch
      * @return configured curve birch
      */
-    public static TreeConfiguration BuildDeadWith(int height, int heightFirstBranch, int heightSecondBranch) {
+    public static TreeConfiguration BuildDeadWith() {
         return new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(Blocks.BIRCH_LOG),
-                new ForkingTrunkPlacer(height, heightFirstBranch, heightSecondBranch),
+                new ForkingTrunkPlacer(10, 3, 5),
                 BlockStateProvider.simple(Blocks.AIR),
                 new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(3), 3),
                 new TwoLayersFeatureSize(1, 0, 2)
